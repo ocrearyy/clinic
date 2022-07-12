@@ -6,6 +6,7 @@
 ## Screenshot of Database 
 
 
+![clinic_diagram](https://user-images.githubusercontent.com/40554384/178545008-f30609eb-8621-4a3f-a913-1640252c44af.png)
 
 
 
