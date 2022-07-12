@@ -48,3 +48,12 @@ CREATE TABLE invoice_items
     CONSTRAINT "fk_treatment" FOREIGN KEY (treatment_id) REFERENCES treatments(id) ON DELETE SET NULL,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE medical_history_treatments
+(
+    medical_history_id INT,
+    treatment_id INT,
+    CONSTRAINT "fk_medical_history_id" FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id) ON DELETE SET NULL,
+    CONSTRAINT "fk_treatment_id" FOREIGN KEY (treatment_id) REFERENCES treatments(id) ON DELETE SET NULL,
+    PRIMARY KEY(medical_histories, treatment_id)
+);
