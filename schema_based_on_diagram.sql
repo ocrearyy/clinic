@@ -55,5 +55,15 @@ CREATE TABLE medical_history_treatments
     treatment_id INT,
     CONSTRAINT "fk_medical_history_id" FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id) ON DELETE SET NULL,
     CONSTRAINT "fk_treatment_id" FOREIGN KEY (treatment_id) REFERENCES treatments(id) ON DELETE SET NULL,
-    PRIMARY KEY(medical_histories, treatment_id)
+    PRIMARY KEY(medical_history_id, treatment_id)
 );
+
+
+CREATE INDEX medical_history_treatments_index ON medical_history_treatments(medical_history_id, treatment_id);
+CREATE INDEX patient_id_medical_index ON medical_histories(patient_id);
+CREATE INDEX invoice_items_index ON invoice_items(invoice_id);
+CREATE INDEX treatments_invoice_index ON invoice_items(treatment_id);
+CREATE INDEX medical_invoice_index ON invoices(medical_history_id);
+
+
+
